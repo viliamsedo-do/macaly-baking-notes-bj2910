@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "🍞 Pekařský Deník & Časovač",
+    "subtitle": "Dynamické přizpůsobení droždí podle odchodu do práce",
+    "lite": "Lite",
+    "pro": "PRO →"
+  },
+  "lang": {
+    "sk": "Slovenčina",
+    "cs": "Čeština",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "recipes": {
+    "savedTitle": "Moje uložené recepty",
+    "loading": "Načítám recepty…",
+    "empty": "Zatím nemáš uložené žádné recepty.",
+    "load": "Načíst",
+    "deleteAria": "Vymazat recept {{name}}",
+    "loadMore": "Načíst další recepty",
+    "namePlaceholder": "Název receptu (nech prázdné = vygeneruje se)",
+    "save": "Uložit recept",
+    "saving": "Ukládám…",
+    "saveError": "Recept se nepodařilo uložit."
+  },
+  "form": {
+    "ingredientsTitle": "Suroviny a parametry",
+    "flourMix": "Mix mouk (spolu 100%):",
+    "flourNone": "-- Žádná mouka --",
+    "flourCustom": "Jiná / Vlastní mouka...",
+    "flourCustomPlaceholder": "Zadej název {{n}}. mouky",
+    "flourAria": "{{n}}. mouka",
+    "flourPctAria": "Podíl {{n}}. mouky v procentech",
+    "fermentMode": "Režim kynutí",
+    "modeOvernight": "Ranní pečení (kynutí přes noc)",
+    "modeWorkday": "Večerní pečení po práci (přes den v lednici)",
+    "workTime": "Začátek (odchod do práce)",
+    "yeastBrand": "Výrobce a typ droždí",
+    "yeastCustomPlaceholder": "Zadej vlastní značku",
+    "flourWeight": "Celková mouka (g)",
+    "hydration": "Hyratace (%)",
+    "roomTemp": "Teplota v místnosti (°C)",
+    "roomTempCold": "18 - 20 °C (Chladno: ~80 min kynutí)",
+    "roomTempIdeal": "21 - 24 °C (Ideál: ~60 min kynutí)",
+    "roomTempWarm": "25 - 28 °C (Teplo: ~45 min kynutí)",
+    "bakeTime": "Požadovaný čas pečení",
+    "yeastCustom": "Jiný výrobce..."
+  },
+  "recap": {
+    "flours": "Rozpis mouk",
+    "protein": "Prům. bílkoviny / 100g",
+    "water": "Voda ({{pct}}%)",
+    "salt": "Sůl (2%)",
+    "fridgeHours": "Těsto bude v lednici přibližně {{hours}} hodin.",
+    "yeastFresh": "Čerstvé ({{pct}}%)",
+    "yeastInstant": "Sušené ({{pct}}%)"
+  },
+  "timeline": {
+    "title": "Časový harmonogram na míru",
+    "morning": "RÁNO",
+    "afternoon": "PO PRÁCI",
+    "evening": "VEČER",
+    "dayBefore": "den před",
+    "steps": {
+      "workday": {
+        "autolyseTitle": "{{part}}: Autolýza (30 min)",
+        "autolyseDesc": "Smíchej mouky: [{{flours}}] a {{water}}g vlažné vody. Přikryj mísu.",
+        "fridgeTitle": "{{part}}: Zapracovat droždí + Sůl -> Lednice",
+        "fridgeDesc": "Vmis {{yeast}}g droždí a sůl. Mísu hned odlož do lednice (4 °C) a můžeš jít do práce!",
+        "bathTitle": "{{part}}: Vodní koupel (20 min)",
+        "bathDesc": "Vyber těsto z lednice. Mísu ponoř do vlažné vody (30-32 °C), aby se po celém dni ohřálo.",
+        "mixTitle": "{{part}}: Vymísení těsta (10 min)",
+        "mixDesc": "Důkladně vymís těsto ({{hydration}}% hydratace). Při {{protein}}g bílkovin je těsto krásně pružné.",
+        "foldTitle": "Přeložení těsta (Stretch & Fold)",
+        "foldDesc": "Série 4 přeložení ze stran pro zpevnění lepkové sítě.",
+        "shapeTitle": "Tvarování do ošatky",
+        "shapeDesc": "Vytvar bochník a vlož do ošatky (~{{mins}} min kynutí při {{temp}}°C).",
+        "preheatTitle": "Zapnutí trouby (250 °C)",
+        "preheatDesc": "Zapni troubu s hrncem naplno.",
+        "bakeTitle": "🔥 PEČENÍ CHLEBA",
+        "bakeDesc": "20 min při 230 °C přikryté, potom 20 min při 200 °C odkryté.",
+        "doneTitle": "✓ Hotovo! Vychladnutí",
+        "doneDesc": "Vyber chléb a nech ho úplně vychladnout na mřížce."
+      },
+      "overnight": {
+        "autolyseTitle": "{{part}}: Autolýza (30 min)",
+        "autolyseDesc": "Smíchej mouky: [{{flours}}] a {{water}}g vody.",
+        "fridgeTitle": "{{part}}: Droždí + Sůl -> Lednice",
+        "fridgeDesc": "Přidej {{yeast}}g droždí a sůl. Dej těsto na noc do lednice (4 °C).",
+        "bathTitle": "{{part}}: Vodní koupel (20 min)",
+        "bathDesc": "Ohřej těsto z lednice ve vlažné vodní lázni.",
+        "mixTitle": "{{part}}: Vymísení těsta (10 min)",
+        "mixDesc": "Vymís těsto a připrav ho na překládání.",
+        "foldTitle": "Přeložení těsta (Stretch & Fold)",
+        "foldDesc": "Rychlé přeložení ze všech 4 stran.",
+        "shapeTitle": "Tvarování do ošatky",
+        "shapeDesc": "Kynutí v ošatce ~{{mins}} min při {{temp}}°C.",
+        "preheatTitle": "Zapnutí trouby (250 °C)",
+        "preheatDesc": "Zapni troubu s litinovým hrncem.",
+        "bakeTitle": "🔥 PEČENÍ CHLEBA",
+        "bakeDesc": "20 min při 230 °C přikryté, potom 20 min při 200 °C odkryté.",
+        "doneTitle": "✓ Hotovo! Vychladnutí",
+        "doneDesc": "Nech chléb vychladnout na mřížce."
+      }
+    }
+  },
+  "log": {
+    "title": "Uložit pokus do deníku",
+    "rating": "Hodnocení výsledku",
+    "ratingLabel": "Hodnocení výsledku (1 - 5 hvězdiček)",
+    "stars": "{{n}} hvězdiček",
+    "notes": "Poznámky k pečení",
+    "notesPlaceholder": "Např. Při odchodu v 06:15 bylo droždí tak akorát, těsto v lednici nezkynulo...",
+    "save": "Uložit pokus do historie",
+    "saving": "Ukládám…",
+    "saveError": "Záznam se nepodařilo uložit."
+  },
+  "history": {
+    "title": "Historie pečení",
+    "loading": "Načítám historii…",
+    "empty": "Zatím tu nemáš žádné uložené pokusy.",
+    "flourTotal": "{{g}}g mouky",
+    "summary": "Hydratace: {{hydration}}% | Odchod: {{workTime}} | Pečení: {{bakeTime}}",
+    "starsAria": "{{n}} z 5 hvězdiček",
+    "saved": "Uloženo:",
+    "delete": "Vymazat záznam",
+    "deleteAria": "Vymazat záznam {{name}}",
+    "loadMore": "Načíst starší záznamy"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "🍞 Baking Diary & Timer",
+    "subtitle": "Dynamic yeast adjustment based on your work departure",
+    "lite": "Lite",
+    "pro": "PRO →"
+  },
+  "lang": {
+    "sk": "Slovenčina",
+    "cs": "Čeština",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "recipes": {
+    "savedTitle": "My saved recipes",
+    "loading": "Loading recipes…",
+    "empty": "You have no saved recipes yet.",
+    "load": "Load",
+    "deleteAria": "Delete recipe {{name}}",
+    "loadMore": "Load more recipes",
+    "namePlaceholder": "Recipe name (leave empty = auto-generated)",
+    "save": "Save recipe",
+    "saving": "Saving…",
+    "saveError": "Failed to save the recipe."
+  },
+  "form": {
+    "ingredientsTitle": "Ingredients & parameters",
+    "flourMix": "Flour mix (total 100%):",
+    "flourNone": "-- No flour --",
+    "flourCustom": "Other / Custom flour...",
+    "flourCustomPlaceholder": "Enter name of flour {{n}}",
+    "flourAria": "Flour {{n}}",
+    "flourPctAria": "Share of flour {{n}} in percent",
+    "fermentMode": "Fermentation mode",
+    "modeOvernight": "Morning bake (overnight fermentation)",
+    "modeWorkday": "Evening bake after work (in the fridge during the day)",
+    "workTime": "Start (leaving for work)",
+    "yeastBrand": "Yeast brand and type",
+    "yeastCustomPlaceholder": "Enter your own brand",
+    "flourWeight": "Total flour (g)",
+    "hydration": "Hydration (%)",
+    "roomTemp": "Room temperature (°C)",
+    "roomTempCold": "18 - 20 °C (Cold: ~80 min proofing)",
+    "roomTempIdeal": "21 - 24 °C (Ideal: ~60 min proofing)",
+    "roomTempWarm": "25 - 28 °C (Warm: ~45 min proofing)",
+    "bakeTime": "Desired baking time",
+    "yeastCustom": "Other brand..."
+  },
+  "recap": {
+    "flours": "Flour breakdown",
+    "protein": "Avg. protein / 100g",
+    "water": "Water ({{pct}}%)",
+    "salt": "Salt (2%)",
+    "fridgeHours": "The dough will spend about {{hours}} hours in the fridge.",
+    "yeastFresh": "Fresh ({{pct}}%)",
+    "yeastInstant": "Instant ({{pct}}%)"
+  },
+  "timeline": {
+    "title": "Custom time schedule",
+    "morning": "MORNING",
+    "afternoon": "AFTER WORK",
+    "evening": "EVENING",
+    "dayBefore": "day before",
+    "steps": {
+      "workday": {
+        "autolyseTitle": "{{part}}: Autolyse (30 min)",
+        "autolyseDesc": "Mix flours: [{{flours}}] and {{water}}g of lukewarm water. Cover the bowl.",
+        "fridgeTitle": "{{part}}: Work in yeast + Salt -> Fridge",
+        "fridgeDesc": "Work in {{yeast}}g of yeast and salt. Put the bowl straight into the fridge (4 °C) and head to work!",
+        "bathTitle": "{{part}}: Water bath (20 min)",
+        "bathDesc": "Take the dough out of the fridge. Submerge the bowl in lukewarm water (30-32 °C) to warm it up after the whole day.",
+        "mixTitle": "{{part}}: Kneading the dough (10 min)",
+        "mixDesc": "Knead the dough thoroughly ({{hydration}}% hydration). With {{protein}}g of protein the dough is beautifully elastic.",
+        "foldTitle": "Stretch & Fold",
+        "foldDesc": "A series of 4 folds from the sides to strengthen the gluten network.",
+        "shapeTitle": "Shaping into the banneton",
+        "shapeDesc": "Shape the loaf and place it in the banneton (~{{mins}} min proofing at {{temp}}°C).",
+        "preheatTitle": "Turn on the oven (250 °C)",
+        "preheatDesc": "Preheat the oven with the pot at full power.",
+        "bakeTitle": "🔥 BAKING THE BREAD",
+        "bakeDesc": "20 min at 230 °C covered, then 20 min at 200 °C uncovered.",
+        "doneTitle": "✓ Done! Cooling",
+        "doneDesc": "Take the bread out and let it cool completely on a rack."
+      },
+      "overnight": {
+        "autolyseTitle": "{{part}}: Autolyse (30 min)",
+        "autolyseDesc": "Mix flours: [{{flours}}] and {{water}}g of water.",
+        "fridgeTitle": "{{part}}: Yeast + Salt -> Fridge",
+        "fridgeDesc": "Add {{yeast}}g of yeast and salt. Put the dough in the fridge overnight (4 °C).",
+        "bathTitle": "{{part}}: Water bath (20 min)",
+        "bathDesc": "Warm the dough from the fridge in a lukewarm water bath.",
+        "mixTitle": "{{part}}: Kneading the dough (10 min)",
+        "mixDesc": "Knead the dough and prepare it for folding.",
+        "foldTitle": "Stretch & Fold",
+        "foldDesc": "Quick folding from all 4 sides.",
+        "shapeTitle": "Shaping into the banneton",
+        "shapeDesc": "Proofing in the banneton ~{{mins}} min at {{temp}}°C.",
+        "preheatTitle": "Turn on the oven (250 °C)",
+        "preheatDesc": "Preheat the oven with the cast iron pot.",
+        "bakeTitle": "🔥 BAKING THE BREAD",
+        "bakeDesc": "20 min at 230 °C covered, then 20 min at 200 °C uncovered.",
+        "doneTitle": "✓ Done! Cooling",
+        "doneDesc": "Let the bread cool on a rack."
+      }
+    }
+  },
+  "log": {
+    "title": "Save an attempt to the diary",
+    "rating": "Result rating",
+    "ratingLabel": "Result rating (1 - 5 stars)",
+    "stars": "{{n}} stars",
+    "notes": "Baking notes",
+    "notesPlaceholder": "E.g. Leaving at 06:15 the yeast was just right, the dough didn't overproof in the fridge...",
+    "save": "Save attempt to history",
+    "saving": "Saving…",
+    "saveError": "Failed to save the entry."
+  },
+  "history": {
+    "title": "Baking history",
+    "loading": "Loading history…",
+    "empty": "No saved attempts yet.",
+    "flourTotal": "{{g}}g of flour",
+    "summary": "Hydration: {{hydration}}% | Departure: {{workTime}} | Baking: {{bakeTime}}",
+    "starsAria": "{{n}} of 5 stars",
+    "saved": "Saved:",
+    "delete": "Delete entry",
+    "deleteAria": "Delete entry {{name}}",
+    "loadMore": "Load older entries"
+  }
+}

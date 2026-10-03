@@ -1,0 +1,14 @@
+{
+  "default": {
+    "title": "Pekársky Denník & Časovač",
+    "description": "Kalkulačka na pečenie chleba s dynamickým prispôsobením droždia a denníkom pečení"
+  },
+  "/": {
+    "title": "Pekársky Denník & Časovač",
+    "description": "Kalkulačka na pečenie chleba s dynamickým prispôsobením droždia a denníkom pečení"
+  },
+  "/pro": {
+    "title": "Pekársky Denník PRO",
+    "description": "Pokročilá kalkulačka na pečenie s číselníkmi, kvásokom, bigou a fotkami"
+  }
+}

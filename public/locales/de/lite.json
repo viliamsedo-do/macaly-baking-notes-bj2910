@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "🍞 Bäckertagebuch & Timer",
+    "subtitle": "Dynamische Hefe-Anpassung je nach Arbeitsbeginn",
+    "lite": "Lite",
+    "pro": "PRO →"
+  },
+  "lang": {
+    "sk": "Slovenčina",
+    "cs": "Čeština",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "recipes": {
+    "savedTitle": "Meine gespeicherten Rezepte",
+    "loading": "Rezepte werden geladen…",
+    "empty": "Du hast noch keine gespeicherten Rezepte.",
+    "load": "Laden",
+    "deleteAria": "Rezept {{name}} löschen",
+    "loadMore": "Weitere Rezepte laden",
+    "namePlaceholder": "Rezeptname (leer lassen = wird generiert)",
+    "save": "Rezept speichern",
+    "saving": "Speichern…",
+    "saveError": "Rezept konnte nicht gespeichert werden."
+  },
+  "form": {
+    "ingredientsTitle": "Zutaten & Parameter",
+    "flourMix": "Mehlmischung (gesamt 100%):",
+    "flourNone": "-- Kein Mehl --",
+    "flourCustom": "Anderes / Eigenes Mehl...",
+    "flourCustomPlaceholder": "Name des {{n}}. Mehls eingeben",
+    "flourAria": "Mehl {{n}}",
+    "flourPctAria": "Anteil des {{n}}. Mehls in Prozent",
+    "fermentMode": "Gärmodus",
+    "modeOvernight": "Morgenbacken (über Nacht gären)",
+    "modeWorkday": "Abendbacken nach der Arbeit (tagsüber im Kühlschrank)",
+    "workTime": "Beginn (Abfahrt zur Arbeit)",
+    "yeastBrand": "Hefemarke und Typ",
+    "yeastCustomPlaceholder": "Eigene Marke eingeben",
+    "flourWeight": "Gesamtmehl (g)",
+    "hydration": "Hydration (%)",
+    "roomTemp": "Raumtemperatur (°C)",
+    "roomTempCold": "18 - 20 °C (Kühl: ~80 Min. Garen)",
+    "roomTempIdeal": "21 - 24 °C (Ideal: ~60 Min. Garen)",
+    "roomTempWarm": "25 - 28 °C (Warm: ~45 Min. Garen)",
+    "bakeTime": "Gewünschte Backzeit",
+    "yeastCustom": "Andere Marke..."
+  },
+  "recap": {
+    "flours": "Mehlaufteilung",
+    "protein": "Ø Eiweiß / 100g",
+    "water": "Wasser ({{pct}}%)",
+    "salt": "Salz (2%)",
+    "fridgeHours": "Der Teig bleibt etwa {{hours}} Stunden im Kühlschrank.",
+    "yeastFresh": "Frisch ({{pct}}%)",
+    "yeastInstant": "Trocken ({{pct}}%)"
+  },
+  "timeline": {
+    "title": "Individueller Zeitplan",
+    "morning": "MORGENS",
+    "afternoon": "NACH DER ARBEIT",
+    "evening": "ABENDS",
+    "dayBefore": "Tag zuvor",
+    "steps": {
+      "workday": {
+        "autolyseTitle": "{{part}}: Autolyse (30 Min.)",
+        "autolyseDesc": "Mische die Mehle: [{{flours}}] und {{water}}g lauwarmes Wasser. Decke die Schüssel ab.",
+        "fridgeTitle": "{{part}}: Hefe + Salz einarbeiten -> Kühlschrank",
+        "fridgeDesc": "Arbeite {{yeast}}g Hefe und Salz ein. Stelle die Schüssel sofort in den Kühlschrank (4 °C) und geh zur Arbeit!",
+        "bathTitle": "{{part}}: Wasserbad (20 Min.)",
+        "bathDesc": "Nimm den Teig aus dem Kühlschrank. Tauche die Schüssel in lauwarmes Wasser (30-32 °C), damit er sich nach dem langen Tag erwärmt.",
+        "mixTitle": "{{part}}: Teig kneten (10 Min.)",
+        "mixDesc": "Knete den Teig gründlich ({{hydration}}% Hydration). Bei {{protein}}g Eiweiß ist der Teig schön elastisch.",
+        "foldTitle": "Stretch & Fold",
+        "foldDesc": "Eine Serie von 4 Falten von den Seiten zur Stärkung des Klebergerüsts.",
+        "shapeTitle": "Formen im Gärkorb",
+        "shapeDesc": "Forme den Laib und lege ihn in den Gärkorb (~{{mins}} Min. Garen bei {{temp}}°C).",
+        "preheatTitle": "Ofen vorheizen (250 °C)",
+        "preheatDesc": "Heize den Ofen mit dem Topf auf voller Stufe vor.",
+        "bakeTitle": "🔥 BROT BACKEN",
+        "bakeDesc": "20 Min. bei 230 °C zugedeckt, dann 20 Min. bei 200 °C unbedeckt.",
+        "doneTitle": "✓ Fertig! Abkühlen",
+        "doneDesc": "Nimm das Brot heraus und lass es auf dem Gitter vollständig abkühlen."
+      },
+      "overnight": {
+        "autolyseTitle": "{{part}}: Autolyse (30 Min.)",
+        "autolyseDesc": "Mische die Mehle: [{{flours}}] und {{water}}g Wasser.",
+        "fridgeTitle": "{{part}}: Hefe + Salz -> Kühlschrank",
+        "fridgeDesc": "Füge {{yeast}}g Hefe und Salz hinzu. Stelle den Teig über Nacht in den Kühlschrank (4 °C).",
+        "bathTitle": "{{part}}: Wasserbad (20 Min.)",
+        "bathDesc": "Erwärme den Teig aus dem Kühlschrank in einem lauwarmen Wasserbad.",
+        "mixTitle": "{{part}}: Teig kneten (10 Min.)",
+        "mixDesc": "Knete den Teig und bereite ihn auf das Falten vor.",
+        "foldTitle": "Stretch & Fold",
+        "foldDesc": "Schnelles Falten von allen 4 Seiten.",
+        "shapeTitle": "Formen im Gärkorb",
+        "shapeDesc": "Garen im Gärkorb ~{{mins}} Min. bei {{temp}}°C.",
+        "preheatTitle": "Ofen vorheizen (250 °C)",
+        "preheatDesc": "Heize den Ofen mit dem Gusseisentopf vor.",
+        "bakeTitle": "🔥 BROT BACKEN",
+        "bakeDesc": "20 Min. bei 230 °C zugedeckt, dann 20 Min. bei 200 °C unbedeckt.",
+        "doneTitle": "✓ Fertig! Abkühlen",
+        "doneDesc": "Lass das Brot auf dem Gitter abkühlen."
+      }
+    }
+  },
+  "log": {
+    "title": "Versuch ins Tagebuch speichern",
+    "rating": "Ergebnisbewertung",
+    "ratingLabel": "Ergebnisbewertung (1 - 5 Sterne)",
+    "stars": "{{n}} Sterne",
+    "notes": "Backnotizen",
+    "notesPlaceholder": "Z. B. Bei Abfahrt um 06:15 war die Hefe genau richtig, der Teig im Kühlschrank nicht übergärt...",
+    "save": "Versuch in die Historie speichern",
+    "saving": "Speichern…",
+    "saveError": "Eintrag konnte nicht gespeichert werden."
+  },
+  "history": {
+    "title": "Backhistorie",
+    "loading": "Historie wird geladen…",
+    "empty": "Noch keine gespeicherten Versuche.",
+    "flourTotal": "{{g}}g Mehl",
+    "summary": "Hydration: {{hydration}}% | Abfahrt: {{workTime}} | Backen: {{bakeTime}}",
+    "starsAria": "{{n}} von 5 Sternen",
+    "saved": "Gespeichert:",
+    "delete": "Eintrag löschen",
+    "deleteAria": "Eintrag {{name}} löschen",
+    "loadMore": "Ältere Einträge laden"
+  }
+}
