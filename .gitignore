@@ -56,3 +56,7 @@ next-env.d.ts
 .tanstack
 .gitconfig
 .macaly-git-wrapper.sh
+
+# bun
+.bun/
+bun.lock

@@ -93,7 +93,11 @@
     "moreRecipes": "More recipes ({{n}})",
     "lessRecipes": "Show less",
     "quick": "⚡ Quick workday loaf (direct method)",
-    "mixMethod_handFold": "Stretch & folds (no kneading)"
+    "mixMethod_handFold": "Stretch & folds (no kneading)",
+    "yudaneFlour": "Scald (yudane): flour (g)",
+    "yudaneWater": "Scald: boiling water (g)",
+    "yudaneOff": "no scald",
+    "yudaneSummary": "Scald {{flour}} g flour + {{water}} g boiling water (prepare ahead)"
   },
   "timeline": {
     "title": "2. Tailored schedule",
@@ -162,7 +166,7 @@
     "foldEvening": "Fold #{{n}}",
     "foldEveningDesc": "One set of folds from all sides, no kneading.",
     "shapeEvening": "Preshape and final shape",
-    "shapeEveningDesc": "Preshape, rest 5 minutes and give the loaf its final shape.",
+    "shapeEveningDesc": "Preshape, rest 5 minutes and give the loaf its final shape. The dough should rise by roughly {{rise}} % in the bowl – warmer dough finishes bulking sooner, the fridge completes the rest.",
     "fridgeEvening": "Into banneton -> Fridge",
     "fridgeEveningDesc": "Place dough in banneton and refrigerate (4-6 °C) overnight.",
     "bakeStart": "Bake: 20 min covered (245 °C)",
@@ -171,7 +175,9 @@
     "bakeUncoverDesc": "Remove the lid and lower temperature to 210 °C. Bake 15 minutes.",
     "doorAjar": "Door ajar (5 min)",
     "doorAjarDesc": "Leave the oven door slightly open for the last 5 minutes for a thin crispy crust.",
-    "doneEveningDesc": "Take the bread out and cool for at least 1 hour on a rack."
+    "doneEveningDesc": "Take the bread out and cool for at least 1 hour on a rack.",
+    "yudane": "Scald (yudane) – prepare ahead",
+    "yudaneDesc": "Pour {{water}} g boiling water over {{flour}} g flour, stir into a thick gel and let it cool (ideally the day before, refrigerated). Add to the main dough at mixing."
   },
   "lang": {
     "sk": "Slovenčina",
@@ -190,7 +196,7 @@
     "advice_over": "Over-proofing risk – reduce yeast, shorten the time or lower the temperature.",
     "advice_severely-over": "Severe over-proofing risk – cut the yeast significantly or shorten fermentation.",
     "advice_under": "The dough will likely under-proof – consider more yeast, a warmer spot or more time.",
-    "hint": "Model: yeast rate by temperature (Q10), slowdown from salt and sugar, leaven credit. NH28 = normalized hours at 28 °C – total fermentation work as hours of proofing at 28 °C; ideally proofed dough ≈ 4 NH28.",
+    "hint": "Model: yeast rate by temperature (table peaking at ~32–36 °C, ~12 % in the fridge), effects of salt, sugar/honey, fat, hydration and flour type; sourdough has slower dynamics. NH24 = normalized hours at 24 °C – total fermentation work as hours of proofing at 24 °C. Maturity index ~100 % = ideally proofed dough (below 85 % under-proofed, above 115 % over-proofed); the target is calibrated per schedule and your times and temperatures. Fridge cooling follows a measured curve (The Sourdough Journey: 25.6 °C -> ~10 °C in 3 h, ~4.4 °C in 7.5 h) and in fridge modes the maturity target is adjusted by dough temperature (27 °C -> ~30 % rise, 24 °C -> ~50 %, 21 °C -> ~75 %, 18 °C -> ~100 %).",
     "progress": "Dough maturity index",
     "risk": "Risk",
     "risk_ok": "on track",
@@ -200,6 +206,7 @@
     "title": "🧪 Fermentation model",
     "doughTempMix": "Dough after mixing",
     "doughTempFridge": "Dough before fridge",
+    "riseTarget": "Target rise before the fridge",
     "yeastAdvice": "Recommended yeast",
     "acidity": "Acidity character",
     "acidityMild": "mild (lactic)",

@@ -93,7 +93,11 @@
     "moreRecipes": "Viac receptov ({{n}})",
     "lessRecipes": "Zobraziť menej",
     "quick": "⚡ Rýchly pracovný chlieb (priama metóda)",
-    "mixMethod_handFold": "Ručné preklady (bez miesenia)"
+    "mixMethod_handFold": "Ručné preklady (bez miesenia)",
+    "yudaneFlour": "Zápar (yudane): múka (g)",
+    "yudaneWater": "Zápar: vriaca voda (g)",
+    "yudaneOff": "bez záparu",
+    "yudaneSummary": "Zápar {{flour}} g múky + {{water}} g vriacej vody (priprav vopred)"
   },
   "timeline": {
     "title": "2. Časový harmonogram na mieru",
@@ -162,7 +166,7 @@
     "foldEvening": "Preloženie č. {{n}}",
     "foldEveningDesc": "Jedna séria preložení zo všetkých strán, bez miesenia.",
     "shapeEvening": "Predtvarovanie a finálne tvarovanie",
-    "shapeEveningDesc": "Predtvaruj, nech 5 min odpočinúť a finálne tvaruj bochník.",
+    "shapeEveningDesc": "Predtvaruj, nech 5 min odpočinúť a finálne tvaruj bochník. Cesto by malo v miske narastať približne o {{rise}} % – teplejšie cesto končí kysnutie skôr, chladnička domkne zvyšok.",
     "fridgeEvening": "Vloženie do ošatky -> Chladnička",
     "fridgeEveningDesc": "Vlož cesto do ošatky, ulož do chladničky (4-6 °C) na celú noc.",
     "bakeStart": "Pečenie: 20 min zakryté (245 °C)",
@@ -171,7 +175,9 @@
     "bakeUncoverDesc": "Odkry hrniec a zniž teplotu na 210 °C. Peč 15 minút.",
     "doorAjar": "Pootvorené dvierka (5 min)",
     "doorAjarDesc": "Pootvor dvierka rúry na posledných 5 minút pre tenkú chrumkavú kôrku.",
-    "doneEveningDesc": "Vyber chlieb a nechaj ho chladnúť minimálne 1 hodinu na mriežke."
+    "doneEveningDesc": "Vyber chlieb a nechaj ho chladnúť minimálne 1 hodinu na mriežke.",
+    "yudane": "Zápar (yudane) – priprav vopred",
+    "yudaneDesc": "Zalej {{flour}} g múky {{water}} g vriacej vody, zamiešaj na hustý gél a nechaj vychladnúť (ideálne deň vopred v chladničke). Pridaj do hlavného cesta pri miesení."
   },
   "lang": {
     "sk": "Slovenčina",
@@ -190,7 +196,7 @@
     "advice_over": "Riziko prekvasenia – zníž droždie, skráť čas alebo zníž teplotu.",
     "advice_severely-over": "Silné riziko prekvasenia – výrazne zníž droždie alebo skráť fermentáciu.",
     "advice_under": "Cesto pravdepodobne podkysne – zváž viac droždia, teplejšie miesto alebo dlhší čas.",
-    "hint": "Model: rýchlosť kvasiniek podľa teploty (Q10), spomalenie soľou a cukrom, príspevok predkvasu. NH28 = normované hodiny pri 28 °C – celková fermentačná práca ako hodiny kysnutia pri 28 °C; ideálne vykysnuté cesto ≈ 4 NH28.",
+    "hint": "Model: rýchlosť kvasiniek podľa teploty (tabuľka s optimom ~32–36 °C, v chladničke ~12 %), vplyv soli, cukru/medu, tuku, hydratácie a typu múky; kvášok má pomalšiu dynamiku. NH24 = normované hodiny pri 24 °C – celková fermentačná práca ako hodiny kysnutia pri 24 °C. Index zrelosti ~100 % = ideálne vykysnuté cesto (pod 85 % nedokvasené, nad 115 % prekvasené); cieľ sa kalibruje podľa režimu a tvojich časov a teplôt. Chladnutie v chladničke nasleduje nameranú krivku (The Sourdough Journey: 25,6 °C -> ~10 °C za 3 h, ~4,4 °C za 7,5 h) a v režimoch s chladničkou sa cieľ zrelosti upravuje podľa teploty cesta (27 °C -> ~30 % narastanie, 24 °C -> ~50 %, 21 °C -> ~75 %, 18 °C -> ~100 %).",
     "progress": "Index zrelosti cesta",
     "risk": "Riziko",
     "risk_ok": "v poriadku",
@@ -200,6 +206,7 @@
     "title": "🧪 Fermentačný model",
     "doughTempMix": "Cesto po zmiesení",
     "doughTempFridge": "Cesto pred chladničkou",
+    "riseTarget": "Cieľové narastanie pred chladničkou",
     "yeastAdvice": "Odporúčané droždie",
     "acidity": "Charakter kyslosti",
     "acidityMild": "jemná (mliečna)",
