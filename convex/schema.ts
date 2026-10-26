@@ -60,6 +60,8 @@ export default defineSchema({
     honeyGrams: v.optional(v.number()), // med (g)
     fatGrams: v.optional(v.number()), // maslo/olej (g)
     yeastOverrideG: v.optional(v.number()), // vlastné množstvo droždia (g)
+    yudaneFlourG: v.optional(v.number()), // zápar (yudane): múka (g)
+    yudaneWaterG: v.optional(v.number()), // zápar (yudane): vriaca voda (g)
   }).index("by_name", ["name"]),
 
   // Záznam v denníku pečení

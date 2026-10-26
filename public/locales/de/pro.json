@@ -93,7 +93,11 @@
     "moreRecipes": "Weitere Rezepte ({{n}})",
     "lessRecipes": "Weniger anzeigen",
     "quick": "⚡ Schnelles Arbeitsbrot (direkte Methode)",
-    "mixMethod_handFold": "Stretch & Folds (ohne Kneten)"
+    "mixMethod_handFold": "Stretch & Folds (ohne Kneten)",
+    "yudaneFlour": "Kochstück (Yudane): Mehl (g)",
+    "yudaneWater": "Kochstück: kochendes Wasser (g)",
+    "yudaneOff": "ohne Kochstück",
+    "yudaneSummary": "Kochstück {{flour}} g Mehl + {{water}} g kochendes Wasser (vorbereiten)"
   },
   "timeline": {
     "title": "2. Maßgeschneiderter Zeitplan",
@@ -162,7 +166,7 @@
     "foldEvening": "Falten Nr. {{n}}",
     "foldEveningDesc": "Eine Faltrunde von allen Seiten, ohne Kneten.",
     "shapeEvening": "Vorgeformt und final geformt",
-    "shapeEveningDesc": "Vorgeformen, 5 Min ruhen lassen und final formen.",
+    "shapeEveningDesc": "Vorgeformen, 5 Min ruhen lassen und final formen. Der Teig sollte in der Schüssel um etwa {{rise}} % aufgehen – wärmerer Teig endet früher, der Kühlschrank vollendet den Rest.",
     "fridgeEvening": "In den Gärkorb -> Kühlschrank",
     "fridgeEveningDesc": "Teig in den Gärkorb legen und über Nacht kühl lagern (4-6 °C).",
     "bakeStart": "Backen: 20 Min zugedeckt (245 °C)",
@@ -171,7 +175,9 @@
     "bakeUncoverDesc": "Deckel abnehmen und Temperatur auf 210 °C senken. 15 Minuten backen.",
     "doorAjar": "Tür einen Spalt offen (5 Min)",
     "doorAjarDesc": "Ofentür für die letzten 5 Minuten einen Spalt offen lassen für eine dünne, knusprige Kruste.",
-    "doneEveningDesc": "Brot herausnehmen und mindestens 1 Stunde auf dem Gitter auskühlen lassen."
+    "doneEveningDesc": "Brot herausnehmen und mindestens 1 Stunde auf dem Gitter auskühlen lassen.",
+    "yudane": "Kochstück (Yudane) – vorher zubereiten",
+    "yudaneDesc": "{{water}} g kochendes Wasser über {{flour}} g Mehl gießen, zu einem dicken Gel rühren und abkühlen lassen (idealerweise am Vortag im Kühlschrank). Beim Kneten zum Hauptteig geben."
   },
   "lang": {
     "sk": "Slovenčina",
@@ -190,7 +196,7 @@
     "advice_over": "Übergärungsrisiko – Hefe reduzieren, Zeit verkürzen oder Temperatur senken.",
     "advice_severely-over": "Starkes Übergärungsrisiko – Hefe deutlich reduzieren oder Fermentation verkürzen.",
     "advice_under": "Der Teig gärt wahrscheinlich zu wenig – mehr Hefe, wärmerer Ort oder mehr Zeit erwägen.",
-    "hint": "Modell: Hefegeschwindigkeit nach Temperatur (Q10), Verlangsamung durch Salz und Zucker, Sauerteig-Anrechnung. NH28 = normierte Stunden bei 28 °C – gesamte Gärarbeit als Stunden Gären bei 28 °C; ideal gegärter Teig ≈ 4 NH28.",
+    "hint": "Modell: Hefegeschwindigkeit nach Temperatur (Tabelle mit Optimum ~32–36 °C, ~12 % im Kühlschrank), Einfluss von Salz, Zucker/Honig, Fett, Hydration und Mehltyp; Sauerteig gärt langsamer. NH24 = normierte Stunden bei 24 °C – gesamte Gärarbeit als Stunden Gären bei 24 °C. Reife-Index ~100 % = ideal gegärter Teig (unter 85 % untergären, über 115 % übergären); das Ziel wird pro Zeitplan und deine Zeiten und Temperaturen kalibriert. Die Kühlung im Kühlschrank folgt einer gemessenen Kurve (The Sourdough Journey: 25,6 °C -> ~10 °C in 3 h, ~4,4 °C in 7,5 h) und in Kühlschrank-Modellen wird das Reifeziel an die Teigtemperatur angepasst (27 °C -> ~30 % Aufgehen, 24 °C -> ~50 %, 21 °C -> ~75 %, 18 °C -> ~100 %).",
     "progress": "Teigreife-Index",
     "risk": "Risiko",
     "risk_ok": "im grünen Bereich",
@@ -200,6 +206,7 @@
     "title": "🧪 Fermentationsmodell",
     "doughTempMix": "Teig nach dem Kneten",
     "doughTempFridge": "Teig vor dem Kühlschrank",
+    "riseTarget": "Ziel-Aufgehen vor dem Kühlschrank",
     "yeastAdvice": "Empfohlene Hefe",
     "acidity": "Säurecharakter",
     "acidityMild": "mild (Milchsäure)",

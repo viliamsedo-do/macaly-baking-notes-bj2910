@@ -93,7 +93,11 @@
     "moreRecipes": "Více receptů ({{n}})",
     "lessRecipes": "Zobrazit méně",
     "quick": "⚡ Rychlý pracovní chléb (přímá metoda)",
-    "mixMethod_handFold": "Ruční překlady (bez míchání)"
+    "mixMethod_handFold": "Ruční překlady (bez míchání)",
+    "yudaneFlour": "Zápar (yudane): mouka (g)",
+    "yudaneWater": "Zápar: vroucí voda (g)",
+    "yudaneOff": "bez záparu",
+    "yudaneSummary": "Zápar {{flour}} g mouky + {{water}} g vroucí vody (připrav předem)"
   },
   "timeline": {
     "title": "2. Časový harmonogram na míru",
@@ -162,7 +166,7 @@
     "foldEvening": "Přeložení č. {{n}}",
     "foldEveningDesc": "Jedna série přeložení ze všech stran, bez mísení.",
     "shapeEvening": "Předtvarování a finální tvarování",
-    "shapeEveningDesc": "Předtvaruj, nech 5 min odpočinout a finálně tvaruj bochník.",
+    "shapeEveningDesc": "Předtvaruj, nech 5 min odpočinout a finálně tvaruj bochník. Těsto by mělo v misce narůst přibližně o {{rise}} % – teplejší těsto končí kynutí dřív, lednice dokrývá zbytek.",
     "fridgeEvening": "Vložení do ošatky -> Chladnička",
     "fridgeEveningDesc": "Vlož těsto do ošatky, ulož do chladničky (4-6 °C) na celou noc.",
     "bakeStart": "Pečení: 20 min zakryté (245 °C)",
@@ -171,7 +175,9 @@
     "bakeUncoverDesc": "Odkryj hrnec a sniž teplotu na 210 °C. Peč 15 minut.",
     "doorAjar": "Pootvřená dvířka (5 min)",
     "doorAjarDesc": "Pootvor dvířka trouby na posledních 5 minut pro tenkou křupavou kůrku.",
-    "doneEveningDesc": "Vyber chléb a nech ho chladnout minimálně 1 hodinu na mřížce."
+    "doneEveningDesc": "Vyber chléb a nech ho chladnout minimálně 1 hodinu na mřížce.",
+    "yudane": "Zápar (yudane) – připrav předem",
+    "yudaneDesc": "Zalej {{flour}} g mouky {{water}} g vroucí vody, zamíchej na hustý gel a nech vychladnout (ideálně den předem v chladničce). Přidej do hlavního těsta při mísení."
   },
   "lang": {
     "sk": "Slovenčina",
@@ -190,7 +196,7 @@
     "advice_over": "Riziko překynutí – sniž droždí, zkrať čas nebo sniž teplotu.",
     "advice_severely-over": "Silné riziko překynutí – výrazně sniž droždí nebo zkrať fermentaci.",
     "advice_under": "Těsto pravděpodobně podkysne – zvaž víc droždí, teplejší místo nebo delší čas.",
-    "hint": "Model: rychlost kvasinek podle teploty (Q10), zpomalení solí a cukrem, příspěvek předkvasu. NH28 = normované hodiny při 28 °C – celková fermentační práce jako hodiny kynutí při 28 °C; ideálně vykynuté těsto ≈ 4 NH28.",
+    "hint": "Model: rychlost kvasinek podle teploty (tabulka s optimem ~32–36 °C, v lednici ~12 %), vliv soli, cukru/medu, tuku, hydratace a typu mouky; kvásek má pomalejší dynamiku. NH24 = normované hodiny při 24 °C – celková fermentační práce jako hodiny kynutí při 24 °C. Index zralosti ~100 % = ideálně vykynuté těsto (pod 85 % nedokvasené, nad 115 % překvasené); cíl se kalibruje podle režimu a tvých časů a teplot. Chlazení v lednici následuje naměřenou křivku (The Sourdough Journey: 25,6 °C -> ~10 °C za 3 h, ~4,4 °C za 7,5 h) a v režimech s lednicí se cíl zralosti upravuje podle teploty těsta (27 °C -> ~30 % narůstání, 24 °C -> ~50 %, 21 °C -> ~75 %, 18 °C -> ~100 %).",
     "progress": "Index zralosti těsta",
     "risk": "Riziko",
     "risk_ok": "v pořádku",
@@ -200,6 +206,7 @@
     "title": "🧪 Fermentační model",
     "doughTempMix": "Těsto po zamísení",
     "doughTempFridge": "Těsto před lednicí",
+    "riseTarget": "Cílové narůstání před lednicí",
     "yeastAdvice": "Doporučené droždí",
     "acidity": "Charakter kyselosti",
     "acidityMild": "jemná (mléčná)",

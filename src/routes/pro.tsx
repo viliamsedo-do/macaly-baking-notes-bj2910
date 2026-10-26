@@ -109,6 +109,10 @@ type FormState = {
   mixMethod: "hand" | "handFold" | "planetary" | "spiral"
   honeyGrams: number | ""
   fatGrams: number | ""
+  /** zápar (yudane): múka v g; prázdne = bez záparu */
+  yudaneFlourG: number | ""
+  /** zápar (yudane): vriaca voda v g; prázdne = 1:1 k múke */
+  yudaneWaterG: number | ""
   /** vstupná teplota vody (°C); ak prázdne, použije sa odporúčaná */
   waterInTemp: number | ""
   /** teplota cesta po zmiesení (°C) */
@@ -519,6 +523,8 @@ function ProPage() {
     mixMethod: "planetary",
     honeyGrams: "",
     fatGrams: "",
+    yudaneFlourG: "",
+    yudaneWaterG: "",
     waterInTemp: "",
     doughAfterMixTemp: "",
     doughFridgeTemp: "",
@@ -736,6 +742,11 @@ function ProPage() {
   const recipe = useMemo(() => {
     const flourTotal = form.flourWeight || 500
     const hydration = form.hydration || 70
+    // ZÁPAR (yudane): múka + vriaca voda, pripravuje sa vopred (nie je to kvas!)
+    const yudaneFlour = Number(form.yudaneFlourG) > 0 ? Number(form.yudaneFlourG) : 0
+    const yudaneWater =
+      Number(form.yudaneWaterG) > 0 ? Number(form.yudaneWaterG) : yudaneFlour // Yudane ~ 1:1
+    const flourGrandTotal = flourTotal + yudaneFlour
 
     const flourList = form.flours
       .filter((f) => f.value !== "žiadna" && f.value !== "" && Number(f.pct) > 0)
@@ -764,7 +775,7 @@ function ProPage() {
     // PREDKVAS: % z múky, hydratácia predkvasu
     const leaven = ferments?.find((f) => f._id === form.leavenId)
     const leavenPct = Number(form.leavenPct) > 0 && leaven ? Number(form.leavenPct) : 0
-    const leavenFlour = Math.round(flourTotal * (leavenPct / 100))
+    const leavenFlour = Math.round(flourGrandTotal * (leavenPct / 100))
     const leavenWater = Math.round(leavenFlour * ((leaven?.hydration ?? 100) / 100))
     const leavenTotal = leavenFlour + leavenWater
 
@@ -808,13 +819,13 @@ function ProPage() {
       form.yeastOverrideG !== "" && Number(form.yeastOverrideG) >= 0
         ? +Number(form.yeastOverrideG).toFixed(2)
         : autoYeastGrams
-    const yeastDosePct = flourTotal > 0 ? (yeastGrams / flourTotal) * 100 : 0
-    const yeastAutoPct = flourTotal > 0 ? (autoYeastGrams / flourTotal) * 100 : 0
+    const yeastDosePct = flourGrandTotal > 0 ? (yeastGrams / flourGrandTotal) * 100 : 0
+    const yeastAutoPct = flourGrandTotal > 0 ? (autoYeastGrams / flourGrandTotal) * 100 : 0
 
-    // voda: cieľová - voda v predkvase
-    const targetWater = Math.round(flourTotal * (hydration / 100))
-    const waterGrams = Math.max(0, targetWater - leavenWater)
-    const saltGrams = Math.round(flourTotal * 0.02)
+    // voda: cieľová z celkovej múky - voda v predkvase - voda v zápare
+    const targetWater = Math.round(flourGrandTotal * (hydration / 100))
+    const waterGrams = Math.max(0, targetWater - leavenWater - yudaneWater)
+    const saltGrams = Math.round(flourGrandTotal * 0.02)
     const honeyGrams = Number(form.honeyGrams) > 0 ? Number(form.honeyGrams) : 0
     const fatGrams = Number(form.fatGrams) > 0 ? Number(form.fatGrams) : 0
 
@@ -850,7 +861,7 @@ function ProPage() {
     // ---------- FERMENTAČNÝ MODEL (vstup -> mikrobiológia -> výstup) ----------
     // fázy procesu podľa režimu; bulk/proof sa berú z doterajších odhadov
     const saltPctOfFlour = 2
-    const sweetenerPctOfFlour = flourTotal > 0 ? (honeyGrams / flourTotal) * 100 : 0
+    const sweetenerPctOfFlour = flourGrandTotal > 0 ? (honeyGrams / flourGrandTotal) * 100 : 0
     const fridgeMinsForModel =
       form.fermentMode === "quick"
         ? 0
@@ -872,11 +883,11 @@ function ProPage() {
         : ph,
     )
     const fermentation = computeFermentation({
-      flourTotal,
+      flourTotal: flourGrandTotal,
       hydrationPct: hydration,
       saltPct: saltPctOfFlour,
       sweetenerPct: sweetenerPctOfFlour,
-      fatPct: flourTotal > 0 ? (fatGrams / flourTotal) * 100 : 0,
+      fatPct: flourGrandTotal > 0 ? (fatGrams / flourGrandTotal) * 100 : 0,
       avgProtein,
       wholegrainPct: flourList.filter((f) => /celozrnn|žitn|ražn|ječn|ovesn/i.test(f.name)).reduce((sum, f) => sum + f.pct, 0),
       yeastKind: leavenPct > 0 || /kvások|kvask/i.test(leaven?.name ?? "") ? "sourdough" : yeastType === "fresh" ? "fresh" : "instant",
@@ -892,6 +903,8 @@ function ProPage() {
     return {
       flourList,
       avgProtein,
+      yudaneFlour,
+      yudaneWater,
       yeastGrams,
       autoYeastGrams,
       yeastName,
@@ -919,7 +932,7 @@ function ProPage() {
 
   // ---------- HARMONOGRAM ----------
   const steps = useMemo(() => {
-    const { flourList, waterGrams, yeastGrams, avgProtein, proofingMins, honeyGrams, fatGrams } = recipe
+    const { flourList, waterGrams, yeastGrams, avgProtein, proofingMins, honeyGrams, fatGrams, yudaneFlour, yudaneWater } = recipe
     const loaves = Math.max(1, form.loaves || 1)
     // viac bochníkov = dlhšie pečenie a chladnutie (každý ďalší +8 min v rúre)
     const coolMins = 40 + (loaves - 1) * 10
@@ -972,7 +985,7 @@ function ProPage() {
         build(addMinutes(form.workTime, -38), "steps.foldEvening", { n: 2 }),
         build(addMinutes(form.workTime, -26), "steps.foldEvening", { n: 3 }),
         build(addMinutes(form.workTime, -15), "steps.foldEvening", { n: 4 }),
-        build(addMinutes(form.workTime, -10), "steps.shapeEvening", {}),
+        build(addMinutes(form.workTime, -10), "steps.shapeEvening", { rise: recipe.fermentation.riseTargetPct ?? 50 }),
         build(form.workTime, "steps.fridgeEvening", {}),
         build(tPreheat, "steps.preheat", {}),
         { time: tBake, key: "steps.bakeStart", title: t("steps.bakeStart") as string, desc: t("steps.bakeStartDesc") as string },
@@ -1045,6 +1058,10 @@ function ProPage() {
         { time: tDone, key: "timeline.done", title: t("timeline.done"), desc: t("steps.doneDesc") },
       ]
     }
+    // ZÁPAR: krok na začiatok harmonogramu (priprav vopred, ideálne deň predom)
+    if (yudaneFlour > 0 && result.length > 0) {
+      result.unshift(build(result[0].time, "steps.yudane", { flour: yudaneFlour, water: yudaneWater }))
+    }
     return result
   }, [recipe, form, t])
 
@@ -1095,6 +1112,8 @@ function ProPage() {
         mixMethod: form.mixMethod,
         honeyGrams: Number(form.honeyGrams) > 0 ? Number(form.honeyGrams) : undefined,
         fatGrams: Number(form.fatGrams) > 0 ? Number(form.fatGrams) : undefined,
+        yudaneFlourG: Number(form.yudaneFlourG) > 0 ? Number(form.yudaneFlourG) : undefined,
+        yudaneWaterG: Number(form.yudaneWaterG) > 0 ? Number(form.yudaneWaterG) : undefined,
         yeastOverrideG:
           form.yeastOverrideG !== "" && Number(form.yeastOverrideG) >= 0
             ? Number(form.yeastOverrideG)
@@ -1164,6 +1183,8 @@ function ProPage() {
         : "planetary") as FormState["mixMethod"],
       honeyGrams: r.honeyGrams ?? "",
       fatGrams: r.fatGrams ?? "",
+      yudaneFlourG: r.yudaneFlourG ?? "",
+      yudaneWaterG: r.yudaneWaterG ?? "",
       yeastOverrideG: r.yeastOverrideG ?? "",
     }))
     window.scrollTo({ top: 0, behavior: "smooth" })
@@ -1559,6 +1580,36 @@ function ProPage() {
               />
             </div>
 
+            <div>
+              <label className={labelClass} htmlFor="yudaneFlourG">{t("recipe.yudaneFlour")}</label>
+              <input
+                type="number"
+                id="yudaneFlourG"
+                className={inputClass}
+                min={0}
+                step={5}
+                placeholder={t("recipe.yudaneOff")}
+                value={form.yudaneFlourG}
+                onChange={(e) => update("yudaneFlourG", e.target.value === "" ? "" : Number(e.target.value) || 0)}
+                data-testid="yudane-flour"
+              />
+            </div>
+
+            <div>
+              <label className={labelClass} htmlFor="yudaneWaterG">{t("recipe.yudaneWater")}</label>
+              <input
+                type="number"
+                id="yudaneWaterG"
+                className={inputClass}
+                min={0}
+                step={5}
+                placeholder="1:1"
+                value={form.yudaneWaterG}
+                onChange={(e) => update("yudaneWaterG", e.target.value === "" ? "" : Number(e.target.value) || 0)}
+                data-testid="yudane-water"
+              />
+            </div>
+
           </div>
 
           {/* PREPOČET */}
@@ -1620,6 +1671,14 @@ function ProPage() {
                     pct: Number(form.leavenPct) || 0,
                     grams: recipe.leavenTotal,
                   })}
+                </div>
+              </div>
+            )}
+            {recipe.yudaneFlour > 0 && (
+              <div data-testid="rec-yudane">
+                <div className="font-bold text-crust-deep text-base">{recipe.yudaneFlour + recipe.yudaneWater} g</div>
+                <div className="text-xs text-crust-deep/80">
+                  {t("recipe.yudaneSummary", { flour: recipe.yudaneFlour, water: recipe.yudaneWater })}
                 </div>
               </div>
             )}
@@ -1819,6 +1878,14 @@ function ProPage() {
                   {recipe.doughFridgeTemp.toFixed(1)} °C
                 </strong>
               </span>
+              {recipe.fermentation.riseTargetPct !== null && (
+                <span className="text-xs text-muted-foreground">
+                  {t("ferm.riseTarget")}:{" "}
+                  <strong data-testid="ferm-rise-target">
+                    ~{recipe.fermentation.riseTargetPct} %
+                  </strong>
+                </span>
+              )}
               <span className="text-xs text-muted-foreground">
                 {t("ferm.yeastAdvice")}:{" "}
                 <strong data-testid="ferm-yeast-advice">

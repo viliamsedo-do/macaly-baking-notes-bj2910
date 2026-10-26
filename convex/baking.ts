@@ -34,6 +34,8 @@ const recipeValidator = v.object({
   honeyGrams: v.optional(v.number()),
   fatGrams: v.optional(v.number()),
   yeastOverrideG: v.optional(v.number()),
+  yudaneFlourG: v.optional(v.number()),
+  yudaneWaterG: v.optional(v.number()),
 })
 
 const flourArg = v.object({
@@ -69,6 +71,8 @@ export const createRecipe = mutation({
     honeyGrams: v.optional(v.number()),
     fatGrams: v.optional(v.number()),
     yeastOverrideG: v.optional(v.number()),
+    yudaneFlourG: v.optional(v.number()),
+    yudaneWaterG: v.optional(v.number()),
   },
   returns: v.id("recipes"),
   handler: async (ctx, args) => {
@@ -92,6 +96,8 @@ export const createRecipe = mutation({
       honeyGrams: args.honeyGrams,
       fatGrams: args.fatGrams,
       yeastOverrideG: args.yeastOverrideG,
+      yudaneFlourG: args.yudaneFlourG,
+      yudaneWaterG: args.yudaneWaterG,
     })
   },
 })
